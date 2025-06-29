@@ -1,0 +1,53 @@
+@username = mario
+@email = supermario@gmail.com
+@password = mario123
+
+### For Registering User
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+
+### For Login
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "username": "{{username}}",
+    "password": "{{password}}"
+}
+
+
+### Accessing Protected Data
+GET http://127.0.0.1:8000/api/protected/
+Authorization: Bearer {{access_token}}
+
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTI2ODAyMiwiaWF0IjoxNzUxMTgxNjIyLCJqdGkiOiI3MWI5NTgwNzE1NWQ0OTBiODNkYTA2NmM4MDcxOTE2NyIsInVzZXJfaWQiOjN9.1Gvm1bIl7_Q3lyqXj1J9ZIH5JP4QpMtoZCcV4bQ6hV4
+
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMTgxOTIyLCJpYXQiOjE3NTExODE2MjIsImp0aSI6ImRjNDllODNlZWJmYTRlMDdhMTMyM2U5NGQ3ZTgwM2Y3IiwidXNlcl9pZCI6M30.IwXTQNL3-7eXRRYKWrnIBvwJOF8GU-A1I6rk9dcfbk4
+
+
+
+### Logout
+POST http://127.0.0.1:8000/api/logout/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "refresh": "{{refresh_token}}"
+}
+
+
+### For Refresh Token
+POST http://127.0.0.1:8000/api/refresh/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "refresh": "{{refresh_token}}"
+}
