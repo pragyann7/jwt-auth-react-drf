@@ -1,9 +1,9 @@
-@username = mario
-@email = supermario@gmail.com
-@password = mario123
+@username = momo
+@email = momo@gmail.com
+@password = momo123
 
 ### For Registering User
-POST http://127.0.0.1:8000/api/register/
+POST http://127.0.0.1:8000/register/
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 
 ### For Login
-POST http://127.0.0.1:8000/api/login/
+POST http://127.0.0.1:8000/login/
 Content-Type: application/json
 
 {
@@ -24,17 +24,17 @@ Content-Type: application/json
 
 
 ### Accessing Protected Data
-GET http://127.0.0.1:8000/api/protected/
+GET http://127.0.0.1:8000/protected/
 Authorization: Bearer {{access_token}}
 
-@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTI2ODAyMiwiaWF0IjoxNzUxMTgxNjIyLCJqdGkiOiI3MWI5NTgwNzE1NWQ0OTBiODNkYTA2NmM4MDcxOTE2NyIsInVzZXJfaWQiOjN9.1Gvm1bIl7_Q3lyqXj1J9ZIH5JP4QpMtoZCcV4bQ6hV4
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTM3NTU1NiwiaWF0IjoxNzUxMjg5MTU2LCJqdGkiOiI5MzA5OTMzMWRiOTA0M2VkYTAwZWQ2ZmYyODA0N2QxZiIsInVzZXJfaWQiOjh9.xKRWRaxa529WkjjCrocKZuqG4lpVmFuvk8mBjLdBYpA
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMTgxOTIyLCJpYXQiOjE3NTExODE2MjIsImp0aSI6ImRjNDllODNlZWJmYTRlMDdhMTMyM2U5NGQ3ZTgwM2Y3IiwidXNlcl9pZCI6M30.IwXTQNL3-7eXRRYKWrnIBvwJOF8GU-A1I6rk9dcfbk4
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg5NDU2LCJpYXQiOjE3NTEyODkxNTYsImp0aSI6ImMwYjFlMGFiZTY0MjQzY2M5NDVhZGNiNGQyYTE3M2YyIiwidXNlcl9pZCI6OH0.Zgtya0SI8ZtRpae1t8AWJNpjg_nBVoQGS4FxtCFIJbY
 
 
 
 ### Logout
-POST http://127.0.0.1:8000/api/logout/
+POST http://127.0.0.1:8000/logout/
 Content-Type: application/json
 Authorization: Bearer {{access_token}}
 
@@ -44,7 +44,7 @@ Authorization: Bearer {{access_token}}
 
 
 ### For Refresh Token
-POST http://127.0.0.1:8000/api/refresh/
+POST http://127.0.0.1:8000/refresh/
 Content-Type: application/json
 Authorization: Bearer {{access_token}}
 
