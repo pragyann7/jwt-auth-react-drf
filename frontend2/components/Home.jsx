@@ -40,8 +40,12 @@ function Home() {
             >
                 Log Out
             </button>
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex flex-col items-center justify-center h-screen">
                 <h1 className="text-center">Hello, Welcome to my Webapp</h1>
+                <h1 className="text-center">Namaste</h1>
+                <h1 className="text-center">Jojoloppa</h1>
+                <h1 className="text-center">Konichiwa</h1>
+                <h1 className="text-center">Hola</h1>
             </div>
 
         </>
