@@ -35,3 +35,15 @@ class LogoutView(APIView):
             return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response({"error": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class HomeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({"message": f"Welcome {request.user.username}!",
+                         "username": request.user.username})
+
+
+# class ForgotpassView(APIView):
+#     def post(self, request):
