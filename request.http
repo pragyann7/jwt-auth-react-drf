@@ -1,6 +1,6 @@
-@username = momo
-@email = momo@gmail.com
-@password = momo123
+@username = mnmn
+@email = mnmn@gmail.com
+@password = mnmn123
 
 ### For Registering User
 POST http://127.0.0.1:8000/register/
@@ -27,9 +27,9 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/protected/
 Authorization: Bearer {{access_token}}
 
-@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTM3NTU1NiwiaWF0IjoxNzUxMjg5MTU2LCJqdGkiOiI5MzA5OTMzMWRiOTA0M2VkYTAwZWQ2ZmYyODA0N2QxZiIsInVzZXJfaWQiOjh9.xKRWRaxa529WkjjCrocKZuqG4lpVmFuvk8mBjLdBYpA
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTQyMDMzMCwiaWF0IjoxNzUxMzMzOTMwLCJqdGkiOiJmZTYyNmM1MmNhNzk0MzNiYjcwMjRlMWIyMjU5ZDFlYyIsInVzZXJfaWQiOjIyfQ.l4Cv3lWJyrGe3NXtQxh-y2EMlqvu5-aR42_yD1HO6sU
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg5NDU2LCJpYXQiOjE3NTEyODkxNTYsImp0aSI6ImMwYjFlMGFiZTY0MjQzY2M5NDVhZGNiNGQyYTE3M2YyIiwidXNlcl9pZCI6OH0.Zgtya0SI8ZtRpae1t8AWJNpjg_nBVoQGS4FxtCFIJbY
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMzM0MjMwLCJpYXQiOjE3NTEzMzM5MzAsImp0aSI6IjM3NWQwMzc2MmQzYjQ1N2JhM2U1M2VjMmNhZmRkOGI0IiwidXNlcl9pZCI6MjJ9.bCusMcdOP_gZdRXoVfHYHzwMc_UWNoLuTt-EGp2U0Qk
 
 
 
