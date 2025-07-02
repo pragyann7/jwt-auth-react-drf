@@ -17,7 +17,7 @@ export default function SignIn() {
             const res = await axiosInstance.post('register/', credentials);
             // console.log(res.data);
             alert(res.data.message)
-            navigate('/login');
+            navigate('/');
         } catch (err) {
             // console.log('Registration failed. ' + (err.response?.data?.username || err.response?.data?.password));
             alert('Registration failed. ' + (err.response?.data?.username || err.response?.data?.password))
@@ -26,7 +26,7 @@ export default function SignIn() {
 
     return (
         <>
-            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+            <div className="flex h-screen min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
                         Sign Up
@@ -99,7 +99,7 @@ export default function SignIn() {
 
                     <p className="mt-10 text-center text-sm/6 text-gray-500">
                         Already have an account?{' '}
-                        <a href="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-500">
                             Login
                         </a>
                     </p>
