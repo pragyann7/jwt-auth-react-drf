@@ -24,7 +24,7 @@ function Home() {
                     },
                 });
                 setUsername(res.data.username);
-                alert(res.data.message);
+                // alert(res.data.message);
             } catch (error) {
                 setError('Failed to fetch data or unauthorized');
             }
@@ -33,7 +33,7 @@ function Home() {
         showHome();
     }, []);
 
-    if (error) return <div className="flex flex-col justify-center items-center h-screen"><h1>{error}</h1><p>go back to <a href="/login"><span className="text-blue-600 hover:underline">Login</span></a> page.</p></div>;
+    if (error) return <div className="flex flex-col justify-center items-center h-screen"><h1>{error}</h1><p>go back to <a href="/"><span className="text-blue-600 hover:underline">Login</span></a> page.</p></div>;
 
     const handleLogout = async () => {
 
@@ -44,20 +44,25 @@ function Home() {
         const access = localStorage.getItem('access');
         if (!refresh) {
             localStorage.clear();
-            // navigate('/');
+            navigate('/');
             return;
         }
 
         try {
             const res = await axiosInstance.post('logout/', { refresh }, { headers: { Authorization: `Bearer ${access}` } });
             console.log(res.data.message)
+            navigate('/');
         } catch (error) {
             console.log(res.data.error)
         } finally {
             localStorage.clear();
-            // navigate('/');
         }
     };
+
+    const handleUserlist = () => {
+        navigate('/userlist');
+    }
+
 
     return (
         <><div className="relative flex justify-end top-10 right-10">
@@ -75,6 +80,13 @@ function Home() {
                 <h1 className="text-center">Jojoloppa</h1>
                 <h1 className="text-center">Konichiwa</h1>
                 <h1 className="text-center">Hola</h1>
+                <button
+                    type="submit"
+                    onClick={handleUserlist}
+                    className="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                    List Users
+                </button>
             </div>
 
         </>
