@@ -3,6 +3,8 @@ import SignIn from '../components/SignIn'
 import SignUp from '../components/SignUp'
 import Home from '../components/Home'
 import Userlist from '../components/UserList'
+import Addproduct from '../components/AddProduct'
+import Productlist from '../components/ProductList'
 import ErrorAuth from '../components/ErrorAuth'
 import Forgetpass from '../components/forgetpass'
 import PrivateRoute from "../components/PrivateRoute";
@@ -16,6 +18,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<SignIn />} />
         <Route path="/userlist" element={<Userlist />} />
+        <Route path="/addproduct" element={<Addproduct />} />
+        <Route path="/productlist" element={<Productlist />} />
         <Route path="/forgetpass" element={<Forgetpass />} />
         <Route path="/home" element={<Home />} />
         <Route path="/error-auth" element={<ErrorAuth />} />
