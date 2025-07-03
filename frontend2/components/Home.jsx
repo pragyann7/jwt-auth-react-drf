@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axiosInstance from "../src/api/axios"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Navigate } from "react-router-dom"
+import ErrorAuth from "./ErrorAuth";
 
 
 function Home() {
@@ -9,20 +10,11 @@ function Home() {
     const [error, setError] = useState(null);
     const [username, setUsername] = useState('');
 
+    // Mount garna ko lagi
     useEffect(() => {
         const showHome = async () => {
-            const token = localStorage.getItem('access');
-            if (!token) {
-                setError('Not aucthenticated');
-                return;
-            }
-
             try {
-                const res = await axiosInstance.get('home/', {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                const res = await axiosInstance.get('home/');
                 setUsername(res.data.username);
                 // alert(res.data.message);
             } catch (error) {
@@ -33,8 +25,11 @@ function Home() {
         showHome();
     }, []);
 
-    if (error) return <div className="flex flex-col justify-center items-center h-screen"><h1>{error}</h1><p>go back to <a href="/"><span className="text-blue-600 hover:underline">Login</span></a> page.</p></div>;
+    // if (error) return <Navigate to="/" />;
+    if (error) return <ErrorAuth />;
 
+
+    // Logout garna ko lagi
     const handleLogout = async () => {
 
         const confirmed = window.confirm("Do you want to log out?");

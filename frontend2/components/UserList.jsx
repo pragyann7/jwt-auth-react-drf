@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react"
 import axiosInstance from "../src/api/axios"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Navigate } from "react-router-dom"
+import ErrorAuth from "../components/ErrorAuth"
 
 function UserList() {
 
     const [usersList, setUserlist] = useState([]);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const token = localStorage.getItem('access');
-                const res = await axiosInstance.get('userlist/', {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+                const res = await axiosInstance.get('userlist/');
                 setUserlist(res.data);
             } catch (err) {
                 console.error("Failed to fetch users", err);
+                setError('Failed to fetch data or unauthorized');
             }
         };
         fetchUsers();
     }, []);
+
+    if (error) return <ErrorAuth />;
+    // if (error) return <Navigate to="/" />;
+
+
 
     const handleLogout = async () => {
 
@@ -63,7 +67,7 @@ function UserList() {
             <div className="mt-4 w-full  flex justify-center items-center">
                 <div className="max-w-4xl w-full max-h-[570px] overflow-y-auto  border-black">
                     <table className="table-auto w-full max-w-4xl max-h-40 overflow-scroll border border-collapse border-black">
-                        <thead className="bg-blue-300">
+                        <thead className="sticky top-0 bg-blue-300">
                             <tr className="border-2 border-black">
                                 <th className="border border-black">ID</th>
                                 <th className="border border-black">Username</th>
