@@ -12,7 +12,6 @@ function UserList() {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const token = localStorage.getItem('access');
                 const res = await axiosInstance.get('userlist/');
                 setUserlist(res.data);
             } catch (err) {
@@ -23,7 +22,7 @@ function UserList() {
         fetchUsers();
     }, []);
 
-    if (error) return <ErrorAuth />;
+    // if (error) return <ErrorAuth />;
     // if (error) return <Navigate to="/" />;
 
 
