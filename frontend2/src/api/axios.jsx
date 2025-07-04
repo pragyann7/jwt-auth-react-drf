@@ -52,7 +52,7 @@ axiosInstance.interceptors.response.use(
             } catch (err) {
                 localStorage.removeItem('access');
                 localStorage.removeItem('refresh');
-                window.location.href = '/';
+                // window.location.href = '/';
                 // window.location.href = '/error-auth';
                 return Promise.reject(err);
             }

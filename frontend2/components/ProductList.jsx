@@ -82,7 +82,7 @@ function ProductList() {
                             <h2 className="text-xl font-semibold">{product.product_name}</h2>
                             <p className="text-gray-500">{product.category}</p>
                             <p className="text-lg font-bold text-blue-600 mt-2">${product.price}</p>
-                            <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                            <button className="mt-4 w-full cursor-pointer bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
                                 View Details
                             </button>
                         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react"
-import axiosInstance from "../src/api/axios"
+// import axiosInstance from "../src/api/axios"
+import axios from "axios";
 import { useNavigate } from "react-router-dom"
 
 export default function SignIn() {
@@ -12,13 +13,15 @@ export default function SignIn() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axiosInstance.post('login/', credentials);
+            // const res = await axiosInstance.post('login/', credentials);
+            const res = await axios.post('http://localhost:8000/login/', credentials);
             localStorage.setItem('access', res.data.access);
             localStorage.setItem('refresh', res.data.refresh);
             alert('Login Successful!');
             navigate('/home');
         } catch (err) {
             alert('Login failed');
+            return
             // alert(err.response?.data?.detail || 'Login failed');
         }
     }
