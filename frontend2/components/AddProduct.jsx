@@ -88,7 +88,7 @@ function AddProduct() {
             <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center">Add New Product</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    {/* Product Name */}
+
                     <div>
                         <label className="block mb-1 font-medium text-gray-700">Name</label>
                         <input
@@ -101,7 +101,6 @@ function AddProduct() {
                         />
                     </div>
 
-                    {/* Price */}
                     <div>
                         <label className="block mb-1 font-medium text-gray-700">Price ($)</label>
                         <input
@@ -114,7 +113,6 @@ function AddProduct() {
                         />
                     </div>
 
-                    {/* Category */}
                     <div>
                         <label className="block mb-1 font-medium text-gray-700">Category</label>
                         <select
@@ -132,7 +130,6 @@ function AddProduct() {
                         </select>
                     </div>
 
-                    {/* Image Upload */}
                     <div>
                         <label className="block mb-1 font-medium text-gray-700">Product Image</label>
                         <input
@@ -146,7 +143,6 @@ function AddProduct() {
                         />
                     </div>
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"

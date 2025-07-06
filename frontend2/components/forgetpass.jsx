@@ -37,6 +37,7 @@ function forgetpass() {
                                     id="email"
                                     name="email"
                                     type="email"
+                                    placeholder="Your Email"
                                     required
                                     onChange={handleChange}
                                     autoComplete="email"

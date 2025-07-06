@@ -10,4 +10,5 @@ function ErrorAuth() {
     )
 }
 
+
 export default ErrorAuth

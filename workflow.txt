@@ -1,0 +1,41 @@
+JWT-Auth-React-Drf (folder)
+|
+|->.venv
+|
+|->frontend2
+    |->components
+    |->node_modules
+    |->public
+    |->src
+|
+|->myproject
+    |->api
+    |->media
+    |->myproject
+    |->manage.py
+|
+|->requirement.txt
+    |->asgiref==3.8.1
+        Django==5.2.3
+        django-cors-headers==4.7.0
+        djangorestframework==3.16.0
+        djangorestframework_simplejwt==5.5.0
+        pillow==11.3.0
+        psycopg2-binary==2.9.10
+        PyJWT==2.9.0
+        sqlparse==0.5.3
+
+
+Workflow:-
+
+
+First create a new env and activate it, then inside env install dependencies given in requirement.txt
+
+### starting backend
+1) start .venv
+2) cd myproject
+3) python manage.py runserver(terminal)
+
+### starting frontend(new terminal)
+1) cd frontend2
+2) npm run dev
