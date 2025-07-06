@@ -76,7 +76,7 @@ function Home() {
         </div>
             <div className="flex flex-col items-center justify-center h-screen">
                 <h2 className="text-5xl font-bold mb-4">Welcome to AuctionHub</h2>
-                <h1 className="text-center">Hello {username}, Welcome to my Webapp</h1>
+                <h1 className="text-center">Hello {username}, Welcome to my Website</h1>
                 <h1 className="text-center">Namaste</h1>
                 <h1 className="text-center">Jojoloppa</h1>
                 <h1 className="text-center">Konichiwa</h1>
