@@ -65,22 +65,16 @@ function Home() {
 
 
     return (
-        <><div className="relative flex justify-end top-10 right-10">
-            <button
-                type="submit"
-                onClick={handleLogout}
-                className="flex justify-center cursor-pointer rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-                Log Out
-            </button>
+        <><div><video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            src="../public/justicewillserve0001-0190.mp4"
+        />
         </div>
-            <div className="flex flex-col items-center justify-center h-screen">
-                <h2 className="text-5xl font-bold mb-4">Welcome to AuctionHub</h2>
-                <h1 className="text-center">Hello {username}, Welcome to my Website</h1>
-                <h1 className="text-center">Namaste</h1>
-                <h1 className="text-center">Jojoloppa</h1>
-                <h1 className="text-center">Konichiwa</h1>
-                <h1 className="text-center">Hola</h1>
+            <div className="relative flex justify-around">
                 <button
                     type="submit"
                     onClick={handleUserlist}
@@ -102,7 +96,22 @@ function Home() {
                 >
                     List Products
                 </button>
+                <button
+                    type="submit"
+                    onClick={handleLogout}
+                    className="flex mt-4 justify-center cursor-pointer rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                    Log Out
+                </button>
             </div>
+            {/* <div className="relative flex items-center gap-20 justify-center h-screen">
+                <h2 className="text-5xl font-bold mb-4">Welcome to AuctionHub</h2>
+                <h1 className="text-center">Hello {username}, Welcome to my Website</h1>
+                <h1 className="text-center">Namaste</h1>
+                <h1 className="text-center">Jojoloppa</h1>
+                <h1 className="text-center">Konichiwa</h1>
+                <h1 className="text-center">Hola</h1>
+            </div> */}
 
         </>
     )
