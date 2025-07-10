@@ -1,11 +1,10 @@
 import { useState } from "react";
 import axiosInstance from "../src/api/axios";
-import { useNavigate } from "react-router-dom";
+import HeaderNav from "./HeaderNav";
 
 
 function AddProduct() {
 
-    const navigate = useNavigate();
 
     const [product, setProduct] = useState({
         name: "",
@@ -49,42 +48,10 @@ function AddProduct() {
         }
     };
 
-    const handleLogout = async () => {
-
-        const confirmed = window.confirm("Do you want to log out?");
-        if (!confirmed) return;
-
-        const refresh = localStorage.getItem('refresh');
-        const access = localStorage.getItem('access');
-        if (!refresh) {
-            localStorage.clear();
-            navigate('/');
-            return;
-        }
-
-        try {
-            const res = await axiosInstance.post('logout/', { refresh }, { headers: { Authorization: `Bearer ${access}` } });
-            console.log(res.data.message)
-            navigate('/');
-        } catch (error) {
-            console.log(res.data.error)
-        } finally {
-            localStorage.clear();
-        }
-    };
-
 
     return (
         <div>
-            <div className="relative flex justify-end top-10 right-10">
-                <button
-                    type="submit"
-                    onClick={handleLogout}
-                    className="flex justify-center cursor-pointer rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                    Log Out
-                </button>
-            </div>
+            <HeaderNav />
             <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center">Add New Product</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
