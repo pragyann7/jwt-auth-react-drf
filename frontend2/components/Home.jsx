@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import axiosInstance from "../src/api/axios"
+import { useNavigate, Navigate } from "react-router-dom"
 import ErrorAuth from "./ErrorAuth";
 import HeaderNav from "./HeaderNav";
 
 
 function Home() {
 
-
+    const navigate = useNavigate();
     const [error, setError] = useState(null);
     const [username, setUsername] = useState('');
 
@@ -28,26 +29,58 @@ function Home() {
     if (error) return <ErrorAuth />;
 
     return (
-        <><div><video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover z-0"
-            src="../public/justicewillserve0001-0190.mp4"
-        />
-        </div>
-            <HeaderNav />
-            {/* <div className="relative flex items-center gap-20 justify-center h-screen">
-                <h2 className="text-5xl font-bold mb-4">Welcome to AuctionHub</h2>
-                <h1 className="text-center">Hello {username}, Welcome to my Website</h1>
-                <h1 className="text-center">Namaste</h1>
-                <h1 className="text-center">Jojoloppa</h1>
-                <h1 className="text-center">Konichiwa</h1>
-                <h1 className="text-center">Hola</h1>
-            </div> */}
+        <>
+            {/* Fullscreen Video Section */}
+            <section className="relative h-screen w-full">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                    src="/justicewillserve0001-0190.mp4"
+                />
+                <div className="absolute top-0 left-0 w-full z-10">
+                    <HeaderNav />
+                </div>
+            </section>
 
+            {/* Scroll-Down Content Section (Below Video) */}
+            <section className="bg-gradient-to-b from-gray-100 to-white py-16 px-6 md:px-20">
+                <div className="max-w-5xl mx-auto text-center">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">About AuctionHub</h2>
+                    <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+                        At <span className="font-semibold text-indigo-600">AuctionHub</span>, we're redefining how people buy and sell online. From rare collectibles to the latest tech, we bring sellers and bidders together in a secure, fast, and exciting auction environment.
+                    </p>
+                    <div className="grid md:grid-cols-3 gap-8 text-left">
+                        <div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">🌐 Global Reach</h3>
+                            <p className="text-gray-600">
+                                Connect with buyers and sellers across the globe. AuctionHub supports international listings and seamless transactions.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">🔒 Trusted & Secure</h3>
+                            <p className="text-gray-600">
+                                Your privacy and security matter. We offer secure payments, verified sellers, and protected bidding systems.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">⚡ Real-Time Auctions</h3>
+                            <p className="text-gray-600">
+                                Experience the thrill of live bidding with instant updates, timers, and alerts to keep you in the action.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mt-12">
+                        <p className="text-md md:text-lg text-gray-700">
+                            Join thousands of users already winning with AuctionHub. Whether you're a casual bidder or a seasoned seller, AuctionHub gives you the tools to succeed in every auction.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
+
     )
 }
 

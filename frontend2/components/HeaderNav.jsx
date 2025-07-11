@@ -31,6 +31,7 @@ function HeaderNav() {
             console.log(res.data.error)
         } finally {
             localStorage.clear();
+            navigate('/');
         }
     };
 
