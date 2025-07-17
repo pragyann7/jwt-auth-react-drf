@@ -3,6 +3,7 @@ import axiosInstance from "../src/api/axios"
 import { useNavigate, Navigate } from "react-router-dom"
 import ErrorAuth from "../components/ErrorAuth"
 import HeaderNav from "./HeaderNav"
+import Footer1 from "./Footer";
 
 
 function ProductList() {
@@ -58,6 +59,7 @@ function ProductList() {
                     ))}
                 </div>
             </div>
+            <Footer1 />
         </div>
     )
 }

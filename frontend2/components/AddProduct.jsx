@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axiosInstance from "../src/api/axios";
 import HeaderNav from "./HeaderNav";
+import Footer1 from "./Footer";
 
 
 function AddProduct() {
@@ -52,7 +53,7 @@ function AddProduct() {
     return (
         <div>
             <HeaderNav />
-            <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg">
+            <div className="max-w-md pb-20 mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center">Add New Product</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -118,6 +119,7 @@ function AddProduct() {
                     </button>
                 </form>
             </div>
+            <Footer1 />
         </div>
     )
 }

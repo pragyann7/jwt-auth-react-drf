@@ -3,6 +3,8 @@ import axiosInstance from "../src/api/axios"
 import { useNavigate, Navigate } from "react-router-dom"
 import ErrorAuth from "./ErrorAuth";
 import HeaderNav from "./HeaderNav";
+import Footer2 from "./Footer2";
+import Footer1 from "./Footer";
 
 
 function Home() {
@@ -79,6 +81,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <Footer1 />
         </>
 
     )
